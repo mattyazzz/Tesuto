@@ -30,6 +30,10 @@
           pkgs.libxkbcommon
         ];
       # (cuando sera el dia q no tenga problema con las rutas en nix? ToT)
+      shellHook = ''
+        export SLINT_BACKEND=winit-software
+      '';
+      # maldita laptop con gpu de la era del caldo
       };
     };
 }

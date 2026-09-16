@@ -1,10 +1,37 @@
-export component AppWindow inherits Window {
-    width: 600px;
-    height: 400px;
+import { HorizontalBox } from "std-widgets.slint";
 
-    Text {
-        text: "WE ARE SO IN";
-        horizontal-alignment: center;
-        vertical-alignment: center;
+export component AppWindow inherits Window {
+    title: "Leaf-Chat";
+    width: 1000px;
+    height: 700px;
+
+    Rectangle {
+        background: #111820;
+
+        HorizontalBox {
+                Rectangle {
+                    width: 250px;
+
+                    Text {
+                        text: "conversations";
+                        color: white;
+                        font-size: 20px;
+                        horizontal-alignment: center;
+                        vertical-alignment: center;
+                    }
+                }
+            
+            Rectangle {
+                background: #111820;
+
+                Text {
+                    text: "chat area";
+                    color: white;
+                    font-size: 20px;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+            }
+        }
     }
 }
