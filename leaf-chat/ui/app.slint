@@ -1,4 +1,4 @@
-import { HorizontalBox } from "std-widgets.slint";
+import { HorizontalBox, VerticalBox } from "std-widgets.slint";
 
 export component AppWindow inherits Window {
     title: "Leaf-Chat";
@@ -9,20 +9,42 @@ export component AppWindow inherits Window {
         background: #111820;
 
         HorizontalBox {
+            // Sidebar
+            VerticalBox {
+                // logo
+                Rectangle {
+                    width: 250px;
+                    height: 35px;
+                    border-radius: 10px;
+                    Text {
+                        text: "Leaf-Chat";
+                        color: #2ca400;
+                        font-weight: 700;
+                        font-family: "JetBrains Mono";
+                        font-italic: true;
+                        horizontal-alignment: center;
+                        vertical-alignment: center;
+                        font-size: 30px;
+                    }
+                }
+                // chat list
                 Rectangle {
                     width: 250px;
 
-                    Text {
-                        text: "conversations";
-                        color: white;
-                        font-size: 20px;
-                        horizontal-alignment: center;
-                        vertical-alignment: center;
+                    VerticalBox {
+                        Text {
+                            text: "sidebar";
+                            color: white;
+                            font-size: 20px;
+                            horizontal-alignment: center;
+                            vertical-alignment: center;
+                        }
                     }
                 }
+            }
             
             Rectangle {
-                background: #111820;
+                background: #0d3a0e;
 
                 Text {
                     text: "chat area";
@@ -31,6 +53,8 @@ export component AppWindow inherits Window {
                     horizontal-alignment: center;
                     vertical-alignment: center;
                 }
+                border-radius: 10px;
+                
             }
         }
     }
