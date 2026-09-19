@@ -1,5 +1,7 @@
 import { HorizontalBox, VerticalBox } from "std-widgets.slint";
 
+
+
 export component AppWindow inherits Window {
     title: "Leaf-Chat";
     width: 1000px;
@@ -42,19 +44,37 @@ export component AppWindow inherits Window {
                     }
                 }
             }
-            
+            // chat
             Rectangle {
                 background: #0d3a0e;
-
-                Text {
-                    text: "chat area";
-                    color: white;
-                    font-size: 20px;
-                    horizontal-alignment: center;
-                    vertical-alignment: center;
-                }
                 border-radius: 10px;
-                
+                VerticalBox {
+                    // chat header / user
+                    Rectangle {
+                        height: 50px;
+                        background: #111820;
+                        border-radius: 10px;
+                        Text {
+                            text: "lily (me)";
+                            color: white;
+                            font-size: 20px;
+                            font-weight: 700;
+                        }
+                    }
+                    // chat messages
+                    Rectangle {
+                    }
+                    Rectangle {
+                        height: 50px;
+                        background: #111820;
+                        border-radius: 10px;
+                        Text {
+                            text: "type shit";
+                            color: gray;
+                            font-size: 16px;
+                        }
+                    }
+                }
             }
         }
     }
