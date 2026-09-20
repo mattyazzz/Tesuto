@@ -1,11 +1,13 @@
-import { HorizontalBox, VerticalBox } from "std-widgets.slint";
-
-
+import { HorizontalBox, VerticalBox, LineEdit, TextEdit } from "std-widgets.slint";
 
 export component AppWindow inherits Window {
     title: "Leaf-Chat";
     width: 1000px;
     height: 700px;
+    in property <[string]> mensajes: [];
+    // in property <[string]> user: [];
+    // THE CALLBACKS
+    callback send_msg(string);
 
     Rectangle {
         background: #111820;
@@ -63,15 +65,26 @@ export component AppWindow inherits Window {
                     }
                     // chat messages
                     Rectangle {
+                        VerticalBox {
+                            for message in root.mensajes: Text{
+                                text: message;
+                                color: white;
+                                font-size: 16px;
+                                font-family: "JetBrains Mono";
+                            }
+                        }
                     }
+                    // chat input
                     Rectangle {
                         height: 50px;
                         background: #111820;
                         border-radius: 10px;
-                        Text {
-                            text: "type shit";
-                            color: gray;
-                            font-size: 16px;
+                        input_usuario :=LineEdit {
+                            placeholder-text: "type shih";
+                            accepted(msg)=> {
+                                root.send_msg(msg);
+                            }
+                            width: 100%;
                         }
                     }
                 }
